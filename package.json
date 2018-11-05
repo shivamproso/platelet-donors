@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "sass": "node-sass scss/ -o public/stylesheets/"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
