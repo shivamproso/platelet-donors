@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/posters-test', function(req, res, next) {
+  res.render('posters', {posters: [{ lang: 'English', link: 'http://plateletdonors.org/bcp/download.php?download_file=Poster PD English.pdf&type=p' }]});
+});
+
 module.exports = router;
