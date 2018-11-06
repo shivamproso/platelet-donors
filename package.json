@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "sass": "node-sass scss/ -o public/stylesheets/"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",
@@ -13,6 +14,7 @@
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "mustache-express": "^1.2.8",
+    "node-sass": "^4.10.0",
     "pug": "2.0.0-beta11"
   }
 }
