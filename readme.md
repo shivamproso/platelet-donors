@@ -3,6 +3,7 @@
 ## Setup Locally
 This project is generated via [Express application generator](https://expressjs.com/en/guide/routing.html).
 To run this project,
+ - Download and install node form https://nodejs.org/en/download/.
  - Clone this repository on your local system
  - Run the following commands in the terminal/cmd
    - Go to project folder
