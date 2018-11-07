@@ -37,3 +37,4 @@ This document contains list of mixins with there usage of them.
 11. flex-shrink - support to cross-browser 'flex-shrink: <value>' property. 
 
 12. flex-basis - support to cross-browser 'flex-basis: <value>' property. 
+
