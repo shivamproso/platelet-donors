@@ -1,3 +1,6 @@
+/**
+* This file shall contain all security related utils functions
+*/
 const bcrypt = require('bcrypt');
 var BCRYPT_SALT_ROUNDS = 12;
 
