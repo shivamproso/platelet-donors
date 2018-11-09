@@ -6,9 +6,23 @@ body {
   margin: 2em;
 }
 
+
+
+
 h1 {
-  background-color: #b30000;
+ 
     font-size: large; 
   font-style: italic;
   color: #ffffff;
+}
+
+
+
+div {
+    background-color: #b30000;
+    width: 1270px;
+    height: 30px;
+    padding: 15px;
+    border: 10px ;
+   ;
 }
