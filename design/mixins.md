@@ -37,4 +37,39 @@ This document contains list of mixins with there usage of them.
 11. flex-shrink - support to cross-browser 'flex-shrink: <value>' property. 
 
 12. flex-basis - support to cross-browser 'flex-basis: <value>' property. 
+  
+  *****Sample use case of mixin*****
+
+@import "C:/Users/abhisheksingh75/Desktop/PROSO/SCSS/_mixins.scss";  //Mixin file path--will change according to system
+
+.flex-container{
+ @include flex_container;
+ @include justify-content(space-around);
+ @include flex-flow(row wrap);
+ }
+ 
+ //In this case we are calling three mixins in SCSS file after compiling into CSS it will look like this
+ 
+ .flex-container {
+  display: -webkit-box;
+  /* OLD - iOS  */
+  display: -moz-box;
+  /* OLD - Firefox*/
+  display: -ms-flexbox;
+  /* IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW- opera, Firefox */
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  justify-content: space-around;
+  -ms-flex-pack: space-around;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+**********************************
 
