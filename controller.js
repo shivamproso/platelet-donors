@@ -1,3 +1,5 @@
+var models = require('./models')
+
 module.exports = {
 
   /**
@@ -12,5 +14,15 @@ module.exports = {
       "name": "John Doe"
     };
     return user;
+  },
+
+  getCountryForCode: function(code, res){
+    models.Country.findAll({
+      where: {
+        CountryCode: code
+      }
+    }).then(countries => {
+      res(countries);
+    });
   }
 };
