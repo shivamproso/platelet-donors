@@ -12,7 +12,7 @@ chai.use(require('chai-http'));
 
 var server = require('../app.js');
 
-describe('setApi',function(){
+describe('createApiLog',function(){
 
 	it('/POST should create a log',function(done){
 
@@ -33,7 +33,6 @@ describe('setApi',function(){
 			should.not.exist(err);
 			res.status.should.equal(201);
 			res.body.status.should.eql('success')
-			//expect(res).to.be.html;
 			
 		})
 		done(); 
@@ -60,7 +59,6 @@ describe('setApi',function(){
 		.end(function(err,res){
 			res.status.should.equal(500);
 			res.body.status.should.eql('error')
-			//expect(res).to.be.html;
 			 		})
 		done(); 
 
@@ -88,7 +86,6 @@ describe('setApi',function(){
 		.end(function(err,res){
 			res.status.should.equal(500);
 			res.body.status.should.eql('error')
-			//expect(res).to.be.html;
 			 		})
 		done(); 
 

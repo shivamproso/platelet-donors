@@ -29,7 +29,7 @@ router.get('/country', function(req, res, next) {
 
 /* POST request for creating api log */
 router.post('/api',function(req,res,next){
-   controller.setApi(req,res);
+   controller.createApiLog(req,res);
 });
 
 module.exports = router;

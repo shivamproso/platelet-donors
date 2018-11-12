@@ -28,33 +28,16 @@ module.exports = {
 
 
 /**
-  * creates api log from req body by taking paramters from it
-  * @function setApi
-  * @param {String} userid The userid (primary key) to get a user.
-  * @return {json} status and an object in json format
+  * creates api log by taking JSON object as input from HTTP request body
+  * @function createApiLog
+  * @param {JSON} req: request body from HTTP request 
+  * @param {JSON} res: response body from HTTP request 
+  * @return {json} JSON object showing success or failure and status of the request 
+  * and the data returned from the request
   */
-  setApi:function(req,res){
-    var param = req.body;
-    if(Object.keys(param).length == 0 && param.constructor === Object)
-    {
-/* This is just a dummy JSON object which will be passed as
- * a parameter when the request body is empty
- * It's just for naive testing(POSTMAN) and will be deleted in near future when not needed
- */
-      param =  {
-      caller: "Shreyansh",
-      bloodgroup: "A+",
-      stdcode: "022",
-      pincode:"400706",
-      apicode:"w1hbr3br4",
-      donorfound:1,
-      donormobile:'8767903336',
-      ipaddress:'127.0.0.1',
-      remarks:"good"
-    };
-    }
+  createApiLog:function(req,res){
     models.apilog.create(
-      param
+      req.body
    ).then(function(log){
       res.status(201).json({
         status:'success',
