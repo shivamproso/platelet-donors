@@ -6,7 +6,7 @@ body {
   margin: 2em;
 }
 
-ul {
+.poster_list {
     list-style-type: decimal;
 }
 
