@@ -7,26 +7,78 @@ module.exports = (sequelize,DataTypes) => {
 			type: DataTypes.INTEGER(11),
 			primaryKey: true
 		},
-		caller: DataTypes.STRING(10),
-		bloodgroup: DataTypes.STRING(8),
-		stdcode: DataTypes.STRING(6),
-		pincode: DataTypes.STRING(6),
+		caller:{
+			type:DataTypes.STRING(10),
+			validate:{
+				len:{
+					args:[4,10],
+					msg:"String length should be in between 4 to 10 characters!"
+				}
+			}
+		},		
+		bloodgroup:{
+            type:DataTypes.STRING(8),
+            validate:{
+            		len:{
+					args:[2,8],
+					msg:"String length should be in between 2 to 8 characters!"
+				}
+            }
+		}, 
+		stdcode: {
+			type:DataTypes.STRING(6),
+			validate:{
+				isNumeric:{
+					msg: "Incorrect Stdcode Format!"
+				}
+			}
+		},
+		pincode:{
+			type:DataTypes.STRING(6),
+			validate:{
+				isNumeric:{
+					msg: "Incorrect Pincode Format!"
+				}
+			}
+		},
 		apicode:{
 			type: DataTypes.STRING(10),
-			allowNull:false
+			allowNull:false,
+
 		},
 		donorfound:{
 			type: 'TINYINT(1)',
-			allowNull:false
+			allowNull:false,
 		},
-		donormobile: DataTypes.STRING(10),
-		ipaddress: DataTypes.STRING(15),
+		donormobile:{
+			type: DataTypes.STRING(10),
+			validate:{
+				isNumeric:{
+					msg: "Incorrect Mobile Number Format! "
+				}			
+			}
+		},
+		
+		ipaddress: {
+			type:DataTypes.STRING(15),
+			validate:{
+				isIP:{
+                   msg:"Invalid IP address format!"
+				}
+				
+			}
+		},
 		ts:{
 			type:'TIMESTAMP',
 			defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
 			allowNull:false,
 		},
-		remarks: DataTypes.STRING(200)
+		remarks:{
+			type:DataTypes.STRING(200),
+			validate:{
+				len:[4,200]
+			}
+		} 
 	},
 	{
 		timestamps:false,

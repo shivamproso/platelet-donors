@@ -57,16 +57,16 @@ describe('createApiLog',function(){
 		
 		})
 		.end(function(err,res){
-			res.status.should.equal(500);
-			res.body.status.should.eql('error')
-			 		})
+			res.status.should.equal(400);
+			res.body.status.should.eql('Error:Bad Request')
+			 		});
 		done(); 
 
        
 	});
 
 
-   it('/POST would not create a log due to donorfound being null',function(done){
+   it('/POST would not create a log due to wrong IP address format',function(done){
 
 	 chai.request(server)
 		.post('/api')
@@ -77,15 +77,16 @@ describe('createApiLog',function(){
              stdcode: "022",
              pincode:"400708",
              apicode:'ertn34wav',
-             donorfound:null,
+             donorfound:1,
              donormobile:'9982385301',
-             ipaddress:'128.0.0.1',
+             ipaddress:'128.0.0.1.20',
              remarks:"good"
 		
 		})
 		.end(function(err,res){
-			res.status.should.equal(500);
-			res.body.status.should.eql('error')
+			res.status.should.equal(400);
+			res.body.status.should.eql('Error:Bad Request');
+
 			 		})
 		done(); 
 

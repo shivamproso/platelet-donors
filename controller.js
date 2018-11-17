@@ -37,7 +37,9 @@ module.exports = {
   */
   createApiLog:function(req,res){
     models.apilog.create(
-      req.body
+    req.body
+      
+   
    ).then(function(log){
       res.status(201).json({
         status:'success',
@@ -45,8 +47,8 @@ module.exports = {
       });
     })
     .catch(function(err) {
-      res.status(500).json({
-        status:'error',
+      res.status(400).json({
+        status:'Error:Bad Request',
         data: err
       });
     })
