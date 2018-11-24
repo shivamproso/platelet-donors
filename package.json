@@ -5,11 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "sass": "node-sass scss/ -o public/stylesheets/",
-<<<<<<< HEAD
-    "test":"mocha"
-=======
     "test": "mocha --reporter list"
->>>>>>> b1060833d4291024dae563ce8d2f760bfee53b55
   },
   "dependencies": {
     "bcrypt": "^3.0.2",
