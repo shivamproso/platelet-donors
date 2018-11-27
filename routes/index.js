@@ -27,6 +27,25 @@ router.get('/country', function(req, res, next) {
   })
 });
 
+
+/** 
+ * GET request for retrieving active news and status of the request
+ * renders the news page 
+ * @param {Array} news containing the records of the active news
+*/
+router.get('/news', function (req, res, next) {
+  controller.getActiveNews()
+  .then(news=>{
+     res.render('news',{news})
+     })
+  .catch(err => {
+      res.send(400).json({
+        "message": "Error:Bad Request!"
+      })  
+  })  
+  });
+
+
 /* POST request for creating api log */
 router.post('/api',function(req,res,next){
    controller.createApiLog(req,res);

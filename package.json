@@ -5,15 +5,12 @@
   "scripts": {
     "start": "node ./bin/www",
     "sass": "node-sass scss/ -o public/stylesheets/",
-<<<<<<< HEAD
-    "test":"mocha"
-=======
-    "test": "mocha --reporter list"
->>>>>>> b1060833d4291024dae563ce8d2f760bfee53b55
+    "test": "mocha"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",
     "chai": "^4.2.0",
+    "chai-json": "^1.0.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",

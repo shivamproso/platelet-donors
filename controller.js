@@ -38,8 +38,6 @@ module.exports = {
   createApiLog:function(req,res){
     models.apilog.create(
     req.body
-      
-   
    ).then(function(log){
       res.status(201).json({
         status:'success',
@@ -52,7 +50,36 @@ module.exports = {
         data: err
       });
     })
+  },
+
+
+/**
+  * fetches a single active news record from the database
+  * @function fetchSingleActiveNews
+  * @param {String} status: a value either 'Y' or 'N' for active and inactive news
+  * @return {Promise} Promise having a news record with title and Linkimg
+*/
+fetchSingleActiveNews:function(status){
+  return models.News.findOne({
+     where:{
+       is_Active: status
+     }
+   })
+  },
+
+/**
+  * fetches a single active news record from the database
+  * @function fetchSingleActiveNews
+  * @param {String} status: a value either 'Y' or 'N' for active and inactive news
+  * @return {Promise} Promise having the all the active news record 
+*/
+  getActiveNews:function(){
+   return models.News.findAll({
+      where:{
+        is_Active:'Y'
+      },
+      attributes:['title','Linkimg']
+    })
+  },
+
   }
-
-
-};
