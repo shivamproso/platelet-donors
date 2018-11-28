@@ -68,10 +68,9 @@ fetchSingleActiveNews:function(status){
   },
 
 /**
-  * fetches a single active news record from the database
-  * @function fetchSingleActiveNews
-  * @param {String} status: a value either 'Y' or 'N' for active and inactive news
-  * @return {Promise} Promise having the all the active news record 
+  * fetches all the active news record from the database
+  * @function getActiveNews
+  * @return {Promise} Promise having the all the active news records
 */
   getActiveNews:function(){
    return models.News.findAll({
