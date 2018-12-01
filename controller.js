@@ -55,14 +55,14 @@ module.exports = {
 
 /**
   * fetches a single active news record from the database
-  * @function fetchSingleActiveNews
+  * @function fetchSingleNews
   * @param {String} status: a value either 'Y' or 'N' for active and inactive news
   * @return {Promise} Promise having a news record with title and Linkimg
 */
-fetchSingleActiveNews:function(status){
+fetchSingleNews:function(status){
   return models.News.findOne({
      where:{
-       is_Active: status
+       Is_active: status
      }
    })
   },
@@ -75,7 +75,7 @@ fetchSingleActiveNews:function(status){
   getActiveNews:function(){
    return models.News.findAll({
       where:{
-        is_Active:'Y'
+        Is_active:'Y'
       },
       attributes:['title','Linkimg']
     })

@@ -29,14 +29,15 @@ router.get('/country', function(req, res, next) {
 
 
 /** 
- * GET request for retrieving active news and status of the request
- * renders the news page 
- * @param {Array} news containing the records of the active news
+ * GET request for rendering the News page
+ * This request uses the result from getActiveNews method 
 */
 router.get('/news', function (req, res, next) {
   controller.getActiveNews()
+  /** getActiveNews returns all the Active News records having title and Linkimg in its callback as 'news' */
   .then(news=>{
-     res.render('news',{news})
+    /** The 'news' data is captured in the variable 'activeNews' and is used in response to render the page */
+     res.render('news',{activeNews:news})
      })
   .catch(err => {
       res.send(400).json({

@@ -15,7 +15,7 @@ describe("News",()=>{
 
     describe("fetchSingleNewsentry",()=>{
         it("It should fetch a single entry from tblnews",(done)=>{
-            controller.fetchSingleActiveNews('Y')
+            controller.fetchSingleNews('Y')
             .then(results=>{
                 expect(results).exist;
                 done();
@@ -23,9 +23,9 @@ describe("News",()=>{
         });
         
         it("It should fetch not fetch a single entry from tblnews", (done) => {
-          controller.fetchSingleActiveNews('N').then(results => {
-                expect(results).be.null;
-                done();
+          controller.fetchSingleNews('A').then(results => {
+              expect(results).be.null;
+              done();
             })
 
         });
