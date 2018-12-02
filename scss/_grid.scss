@@ -1,0 +1,67 @@
+// Grid layout inspired by https://polaris.shopify.com/components/structure/stack
+
+.Stack {
+  @include flex-container;
+  @include flex-direction(row);
+  @include align-items(stretch);
+
+  &--vertical {
+    @include flex-direction(column);
+  }
+
+  // Main Axis
+
+  &--distributionFillEvenly {
+    .Stack__Item {
+      @include flex(1 0 0%);
+      min-width: fit-content;
+      min-width: -webkit-fit-content;
+      min-width: -moz-fit-content;
+    }
+  }
+
+  &--distributionFill {
+    .Stack__Item {
+      @include flex(1 1 auto);
+    }
+  }
+
+  &--distributionCenter {
+    @include justify-content(center);
+  }
+
+  &--distributionLeading {
+    @include justify-content(flex-start);
+  }
+
+  &--distributionTrailing {
+    @include justify-content(flex-end);
+  }
+
+  // Cross Axis
+
+  &--alignmentCenter {
+    @include align-items(center);
+  }
+
+  &--alignmentLeading {
+    @include align-items(flex-start);
+  }
+
+  &--alignmentTrailing {
+    @include align-items(flex-end);
+  }
+
+  &--noWrap {
+    @include flex-wrap(nowrap);
+  }
+
+  &__Item {
+    max-width: 100%;
+    @include flex(0 0 auto);
+
+    &--fill {
+      @include flex(1 1 auto);
+    }
+  }
+}
