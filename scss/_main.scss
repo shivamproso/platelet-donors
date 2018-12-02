@@ -1,0 +1,47 @@
+/*  High-level container  */
+
+.Container {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  background-color: #fff;
+  padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+  max-width: 100%;
+}
+
+@media (min-width:768px) {
+  .Container {
+  	width: 750px
+  }
+}
+
+@media (min-width:992px) {
+  .Container {
+  	width: 970px
+  }
+}
+
+@media (min-width:1200px) {
+  .Container {
+  	width: 1170px
+  }
+}
+
+/*  Header block  */
+
+.Header {
+  &__top {
+    background-color: $primary-bgcolor;
+    color: $secondary-color;
+  }
+
+  &__middle--img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+}

@@ -4,9 +4,22 @@
   @include flex-container;
   @include flex-direction(row);
   @include align-items(stretch);
+  padding: 15px;
 
   &--vertical {
     @include flex-direction(column);
+  }
+
+  &--paddingTight {
+    padding: 5px;
+  }
+
+  &--paddingLoose {
+    padding: 30px;
+  }
+
+  &--noPadding {
+    padding: 0;
   }
 
   // Main Axis
