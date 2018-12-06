@@ -11,7 +11,7 @@
   }
 
   &--paddingTight {
-    padding: 5px;
+    padding: 5px 15px 5px 15px;
   }
 
   &--paddingLoose {
@@ -26,7 +26,7 @@
 
   &--distributionFillEvenly {
     .Stack__Item {
-      @include flex(1 0 0%);
+      @include flex(1, 0, 0%);
       min-width: fit-content;
       min-width: -webkit-fit-content;
       min-width: -moz-fit-content;
@@ -35,7 +35,7 @@
 
   &--distributionFill {
     .Stack__Item {
-      @include flex(1 1 auto);
+      @include flex(1, 1, auto);
     }
   }
 
@@ -71,10 +71,10 @@
 
   &__Item {
     max-width: 100%;
-    @include flex(0 0 auto);
+    @include flex(0, 0, auto);
 
     &--fill {
-      @include flex(1 1 auto);
+      @include flex(1, 1, auto);
     }
   }
 }

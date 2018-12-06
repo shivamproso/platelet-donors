@@ -1,8 +1,10 @@
 @import "variables";
 @import "mixins";
 @import "grid";
+@import "main";
 
 body {
   background-color: #FEFAE5;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
